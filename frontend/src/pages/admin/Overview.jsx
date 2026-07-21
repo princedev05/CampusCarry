@@ -83,31 +83,31 @@ export default function Overview() {
         <StatCard title="Completed %" value={`${counts.completionRate}%`} />
       </div>
 
-      <section className="rounded-xl border border-(--border) bg-(--surface) p-4">
-        <h3 className="text-base font-semibold">Admin Operational Insights</h3>
-        <div className="mt-3 grid gap-3 md:grid-cols-3">
-          <div className="rounded-lg border border-(--border) bg-(--surface-2) p-3">
-            <p className="text-xs text-(--muted)">In-Progress Orders</p>
-            <p className="text-xl font-semibold">{counts.inProgress}</p>
+      <section className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-2xs">
+        <h3 className="text-base font-bold text-slate-900">Admin Operational Insights</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl border border-slate-200/80 bg-slate-50 p-4 shadow-2xs">
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">In-Progress Orders</p>
+            <p className="mt-1 text-2xl font-extrabold text-indigo-600">{counts.inProgress}</p>
           </div>
-          <div className="rounded-lg border border-(--border) bg-(--surface-2) p-3">
-            <p className="text-xs text-(--muted)">Cancelled Orders</p>
-            <p className="text-xl font-semibold">{counts.cancelled}</p>
+          <div className="rounded-xl border border-slate-200/80 bg-slate-50 p-4 shadow-2xs">
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Cancelled Orders</p>
+            <p className="mt-1 text-2xl font-extrabold text-rose-600">{counts.cancelled}</p>
           </div>
-          <div className="rounded-lg border border-(--border) bg-(--surface-2) p-3">
-            <p className="text-xs text-(--muted)">Completed Orders</p>
-            <p className="text-xl font-semibold">{counts.completed}</p>
+          <div className="rounded-xl border border-slate-200/80 bg-slate-50 p-4 shadow-2xs">
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Completed Orders</p>
+            <p className="mt-1 text-2xl font-extrabold text-emerald-600">{counts.completed}</p>
           </div>
         </div>
-        <div className="mt-4">
-          <p className="text-sm font-medium">Alerts</p>
+        <div className="mt-6">
+          <p className="text-sm font-bold text-slate-800">Operational Alerts</p>
           {!alerts.length ? (
-            <p className="mt-2 text-sm text-(--muted)">No operational alerts right now.</p>
+            <p className="mt-2 text-sm text-slate-500">No operational alerts right now.</p>
           ) : (
-            <ul className="mt-2 space-y-2 text-sm">
+            <ul className="mt-3 space-y-2 text-sm">
               {alerts.map((alert) => (
-                <li key={alert} className="rounded-lg border border-(--border) bg-(--surface-2) p-2">
-                  {alert}
+                <li key={alert} className="rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-2.5 text-amber-800 font-medium">
+                  ⚠️ {alert}
                 </li>
               ))}
             </ul>

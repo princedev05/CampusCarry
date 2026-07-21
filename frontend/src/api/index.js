@@ -5,5 +5,4 @@ export * from "./tokens";
 export * from "./delivery";
 export * from "./guard";
 export * from "./admin";
-export * from "./chat";
 export * from "./response";

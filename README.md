@@ -1,6 +1,6 @@
 # 📦 CampusCarry
 
-A full-stack **parcel management system** for college campuses. Students register expected parcels, guards verify arrivals at the gate using tracking ID + OTP, pickup tokens are assigned, and parcels are handed over after confirmation — with real-time chat between students and guards.
+A full-stack **parcel management system** for college campuses. Students register expected parcels, guards verify arrivals at the gate using tracking ID + OTP, pickup tokens are assigned, and parcels are handed over after confirmation.
 
 🔗 **Live Demo (Frontend):** https://campus-carry-rho.vercel.app/
 🔗 **Backend API:** https://campuscarry-backend.onrender.com/
@@ -15,7 +15,6 @@ A full-stack **parcel management system** for college campuses. Students registe
 - 🔐 **JWT Authentication** — secure access + refresh token flow
 - 🎫 **OTP-based Gate Verification** — guards verify parcel arrivals using tracking ID + OTP
 - 🔢 **Pickup Token System** — token pool assignment for organized, queue-free pickups
-- 💬 **Real-time Chat** — Socket.io powered live chat between students and guards
 - 📧 **Email Notifications** — automated emails for password reset and parcel updates
 - 📊 **Admin Analytics Dashboard** — parcel volume, pickup trends, and guard activity insights
 - 👥 **Role-based Access Control** — separate flows for students, guards, and admins
@@ -30,7 +29,6 @@ A full-stack **parcel management system** for college campuses. Students registe
 | Backend | Node.js, Express 5 |
 | Database | MongoDB Atlas (Mongoose) |
 | Auth | JWT (access + refresh tokens) |
-| Real-time | Socket.io |
 | Validation | express-validator |
 | Email | Nodemailer (Mailtrap) |
 | Deployment | Vercel (frontend), Render (backend) |
@@ -164,8 +162,8 @@ Content-Type: application/json
 
 | Role | Access |
 |---|---|
-| **Student** | Register parcels, view pickup tokens, chat with guard |
-| **Guard** | Verify deliveries via OTP, hand over parcels, chat with student |
+| **Student** | Register parcels, view pickup tokens |
+| **Guard** | Verify deliveries via OTP, hand over parcels |
 | **Admin** | View analytics, manage users and deliveries |
 
 ---

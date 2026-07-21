@@ -39,7 +39,6 @@ import guardRoutes from "./routes/guard.routes.js";
 import tokenRoutes from "./routes/token.routes.js";
 import deliveryRoutes from "./routes/delivery.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
-import chatRoutes from "./routes/chat.routes.js";
 
 import { errorHandler } from "./middlewares/error.middleware.js";
 
@@ -53,7 +52,6 @@ app.use("/api/v1/healthcheck", healthcheckRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/delivery", deliveryRoutes);
 app.use("/api/v1/admin", adminRoutes);
-app.use("/api/v1/chat", chatRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to basecampy!!");

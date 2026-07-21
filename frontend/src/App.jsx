@@ -17,7 +17,6 @@ import GuardDashboard from "./pages/guard/GuardDashboard";
 import PendingDeliveries from "./pages/guard/PendingDeliveries";
 import Handover from "./pages/guard/Handover";
 import GuardAbout from "./pages/guard/GuardAbout";
-import ChatPage from "./pages/ChatPage";
 
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import Overview from "./pages/admin/Overview";
@@ -43,7 +42,6 @@ export default function App() {
           <Route path="create-order" element={<CreateOrder />} />
           <Route path="pickup-token" element={<Navigate to="/student/my-orders" replace />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="chat" element={<ChatPage />} />
         </Route>
       </Route>
 
@@ -55,7 +53,6 @@ export default function App() {
           <Route path="handover" element={<Handover />} />
           <Route path="verify-token" element={<Navigate to="/guard/handover" replace />} />
           <Route path="about" element={<GuardAbout />} />
-          <Route path="chat" element={<ChatPage />} />
         </Route>
       </Route>
 

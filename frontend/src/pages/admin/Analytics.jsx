@@ -15,12 +15,12 @@ import {
 import { adminApi, getErrorMessage } from "../../api";
 
 const COLORS = {
-  pending: "#f0c040",
-  arrived: "#3dd6ac",
-  verified: "#38bdf8",
-  token_assigned: "#22d3ee",
-  completed: "#4ade80",
-  cancelled: "#ff5a5a",
+  pending: "#f59e0b",
+  arrived: "#10b981",
+  verified: "#0284c7",
+  token_assigned: "#6366f1",
+  completed: "#14b8a6",
+  cancelled: "#ef4444",
 };
 
 export default function Analytics() {
@@ -81,12 +81,12 @@ export default function Analytics() {
   }, [orders]);
 
   return (
-    <div className="grid gap-5 xl:grid-cols-2">
-      <section className="h-[360px] rounded-xl border border-(--border) bg-(--surface) p-4">
-        <h3 className="mb-3 text-base font-semibold">Orders by Status</h3>
+    <div className="grid gap-6 xl:grid-cols-2">
+      <section className="h-[360px] rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs">
+        <h3 className="mb-3 text-base font-bold text-slate-900">Orders by Status</h3>
         <ResponsiveContainer width="100%" height="90%">
           <PieChart>
-            <Pie data={statusData} dataKey="value" nameKey="name" outerRadius={110} label>
+            <Pie data={statusData} dataKey="value" nameKey="name" outerRadius={105} label>
               {statusData.map((entry) => (
                 <Cell key={entry.name} fill={COLORS[entry.name] || "#64748b"} />
               ))}
@@ -96,28 +96,28 @@ export default function Analytics() {
         </ResponsiveContainer>
       </section>
 
-      <section className="h-[360px] rounded-xl border border-(--border) bg-(--surface) p-4">
-        <h3 className="mb-3 text-base font-semibold">Orders Over Time</h3>
+      <section className="h-[360px] rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs">
+        <h3 className="mb-3 text-base font-bold text-slate-900">Orders Over Time</h3>
         <ResponsiveContainer width="100%" height="90%">
           <BarChart data={timeData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e2330" />
-            <XAxis dataKey="date" stroke="#9ca3af" />
-            <YAxis stroke="#9ca3af" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+            <XAxis dataKey="date" stroke="#64748b" />
+            <YAxis stroke="#64748b" />
             <Tooltip />
-            <Bar dataKey="count" fill="#f0c040" radius={[6, 6, 0, 0]} />
+            <Bar dataKey="count" fill="#6366f1" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </section>
 
-      <section className="h-[360px] rounded-xl border border-(--border) bg-(--surface) p-4 xl:col-span-2">
-        <h3 className="mb-3 text-base font-semibold">Top Delivery Services</h3>
+      <section className="h-[360px] rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs xl:col-span-2">
+        <h3 className="mb-3 text-base font-bold text-slate-900">Top Delivery Services</h3>
         <ResponsiveContainer width="100%" height="90%">
           <BarChart data={serviceData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e2330" />
-            <XAxis dataKey="service" stroke="#9ca3af" />
-            <YAxis stroke="#9ca3af" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+            <XAxis dataKey="service" stroke="#64748b" />
+            <YAxis stroke="#64748b" />
             <Tooltip />
-            <Bar dataKey="count" fill="#3dd6ac" radius={[6, 6, 0, 0]} />
+            <Bar dataKey="count" fill="#10b981" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </section>

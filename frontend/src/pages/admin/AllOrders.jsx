@@ -182,22 +182,22 @@ export default function AllOrders() {
         </select>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Visible Orders</p>
-          <p className="text-xl font-semibold">{metrics.total}</p>
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Visible Orders</p>
+          <p className="mt-1 text-2xl font-extrabold text-slate-900">{metrics.total}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Active Pipeline</p>
-          <p className="text-xl font-semibold">{metrics.active}</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Active Pipeline</p>
+          <p className="mt-1 text-2xl font-extrabold text-indigo-600">{metrics.active}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Completed</p>
-          <p className="text-xl font-semibold">{metrics.completed}</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Completed</p>
+          <p className="mt-1 text-2xl font-extrabold text-emerald-600">{metrics.completed}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Completion Rate</p>
-          <p className="text-xl font-semibold">{metrics.completionRate}%</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Completion Rate</p>
+          <p className="mt-1 text-2xl font-extrabold text-violet-600">{metrics.completionRate}%</p>
         </div>
       </div>
 
@@ -207,27 +207,27 @@ export default function AllOrders() {
         </Button>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-(--border) bg-(--surface)">
+      <div className="overflow-x-auto rounded-2xl border border-slate-200/80 bg-white shadow-2xs">
         <table className="min-w-full text-sm">
-          <thead className="bg-(--surface-2) text-left text-xs uppercase tracking-[0.14em] text-(--muted)">
+          <thead className="bg-slate-50 text-left text-xs font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200/80">
             <tr>
-              <th className="px-4 py-3">Student</th>
-              <th className="px-4 py-3">Tracking ID</th>
-              <th className="px-4 py-3">Service</th>
-              <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3">OTP</th>
-              <th className="px-4 py-3">Date</th>
+              <th className="px-4 py-3.5">Student</th>
+              <th className="px-4 py-3.5">Tracking ID</th>
+              <th className="px-4 py-3.5">Service</th>
+              <th className="px-4 py-3.5">Status</th>
+              <th className="px-4 py-3.5">OTP</th>
+              <th className="px-4 py-3.5">Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-slate-100">
             {sorted.map((order) => (
-              <tr key={order._id} className="border-t border-(--border)">
-                <td className="px-4 py-3">{order?.student?.fullName || order?.student?.username || "-"}</td>
-                <td className="px-4 py-3 font-mono">{order.trackingId || "-"}</td>
-                <td className="px-4 py-3">{order.deliveryService || "-"}</td>
-                <td className="px-4 py-3"><Badge status={order.status || "pending"} /></td>
-                <td className="px-4 py-3 font-mono">{order.deliveryOtp || "-"}</td>
-                <td className="px-4 py-3">{formatDate(order.createdAt || order.updatedAt)}</td>
+              <tr key={order._id} className="transition-colors hover:bg-slate-50/80">
+                <td className="px-4 py-3.5 font-medium text-slate-900">{order?.student?.fullName || order?.student?.username || "-"}</td>
+                <td className="px-4 py-3.5 font-mono text-slate-700">{order.trackingId || "-"}</td>
+                <td className="px-4 py-3.5 text-slate-600">{order.deliveryService || "-"}</td>
+                <td className="px-4 py-3.5"><Badge status={order.status || "pending"} /></td>
+                <td className="px-4 py-3.5 font-mono text-slate-700">{order.deliveryOtp || "-"}</td>
+                <td className="px-4 py-3.5 text-slate-500 text-xs">{formatDate(order.createdAt || order.updatedAt)}</td>
               </tr>
             ))}
           </tbody>

@@ -1,23 +1,23 @@
 import { toTitleCase } from "../utils/format";
 
 const colorByStatus = {
-  pending: "bg-yellow-500/10 text-yellow-300 border-yellow-500/30",
-  arrived: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30",
-  collected: "bg-slate-500/20 text-slate-200 border-slate-400/30",
-  completed: "bg-green-500/10 text-green-300 border-green-500/30",
-  cancelled: "bg-red-500/10 text-red-300 border-red-500/30",
-  verified: "bg-sky-500/10 text-sky-300 border-sky-500/30",
-  token_assigned: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
+  pending: "bg-amber-50 text-amber-700 border-amber-200/80 shadow-2xs font-semibold",
+  arrived: "bg-emerald-50 text-emerald-700 border-emerald-200/80 shadow-2xs font-semibold",
+  collected: "bg-slate-100 text-slate-700 border-slate-200/80 shadow-2xs font-semibold",
+  completed: "bg-teal-50 text-teal-700 border-teal-200/80 shadow-2xs font-semibold",
+  cancelled: "bg-rose-50 text-rose-700 border-rose-200/80 shadow-2xs font-semibold",
+  verified: "bg-sky-50 text-sky-700 border-sky-200/80 shadow-2xs font-semibold",
+  token_assigned: "bg-indigo-50 text-indigo-700 border-indigo-200/80 shadow-2xs font-semibold",
 };
 
 const dotByStatus = {
-  pending: "bg-yellow-400",
-  arrived: "bg-[var(--success)]",
-  collected: "bg-slate-300",
-  completed: "bg-green-400",
-  cancelled: "bg-[var(--danger)]",
-  verified: "bg-sky-400",
-  token_assigned: "bg-cyan-400",
+  pending: "bg-amber-500",
+  arrived: "bg-emerald-500",
+  collected: "bg-slate-500",
+  completed: "bg-teal-500",
+  cancelled: "bg-rose-500",
+  verified: "bg-sky-500",
+  token_assigned: "bg-indigo-500",
 };
 
 export default function Badge({ status }) {

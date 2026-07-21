@@ -17,7 +17,7 @@ export default function DashboardLayout({ title, links }) {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] bg-[radial-gradient(circle_at_20%_20%,rgba(240,192,64,0.07),transparent_20%),radial-gradient(circle_at_80%_10%,rgba(61,214,172,0.08),transparent_25%),radial-gradient(circle_at_70%_80%,rgba(255,90,90,0.06),transparent_25%)] text-[var(--text)]">
+    <div className="min-h-screen bg-slate-50 bg-[radial-gradient(circle_at_15%_15%,rgba(99,102,241,0.06),transparent_25%),radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.06),transparent_25%),radial-gradient(circle_at_60%_85%,rgba(244,63,94,0.05),transparent_30%)] text-slate-900">
       <div className="mx-auto flex min-h-screen max-w-7xl">
         <Sidebar
           title={title}

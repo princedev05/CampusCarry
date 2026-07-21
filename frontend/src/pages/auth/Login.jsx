@@ -53,14 +53,14 @@ export default function Login() {
       title="Login to CampusCarry"
       subtitle="Access your role-based parcel dashboard"
       footer={
-        <div className="flex items-center justify-between">
-          <span>New here? <Link to="/register" className="text-[var(--primary)]">Create account</Link></span>
-          <Link to="/forgot-password" className="text-[var(--primary)]">Forgot password?</Link>
+        <div className="flex items-center justify-between text-xs sm:text-sm font-semibold">
+          <span>New here? <Link to="/register" className="text-indigo-600 hover:text-indigo-700 underline underline-offset-4">Create account</Link></span>
+          <Link to="/forgot-password" className="text-indigo-600 hover:text-indigo-700">Forgot password?</Link>
         </div>
       }
     >
-      <div className="mb-4 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-3 text-xs text-[var(--muted)]">
-        Demo credentials: Use any user already seeded in backend. Example roles are student, guard, admin.
+      <div className="mb-5 rounded-xl border border-indigo-100 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 p-3.5 text-xs font-medium text-indigo-900 shadow-2xs">
+        💡 <span className="font-bold">Demo credentials:</span> Use any user registered or seeded in backend. Example roles are student, guard, admin.
       </div>
       <form onSubmit={onSubmit} className="space-y-4">
         <div>

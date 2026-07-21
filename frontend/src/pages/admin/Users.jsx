@@ -131,26 +131,26 @@ export default function Users() {
         </select>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Visible Users</p>
-          <p className="text-xl font-semibold">{metrics.total}</p>
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Visible Users</p>
+          <p className="mt-1 text-2xl font-extrabold text-slate-900">{metrics.total}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Students</p>
-          <p className="text-xl font-semibold">{metrics.students}</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Students</p>
+          <p className="mt-1 text-2xl font-extrabold text-indigo-600">{metrics.students}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Guards</p>
-          <p className="text-xl font-semibold">{metrics.guards}</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Guards</p>
+          <p className="mt-1 text-2xl font-extrabold text-emerald-600">{metrics.guards}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Admins</p>
-          <p className="text-xl font-semibold">{metrics.admins}</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Admins</p>
+          <p className="mt-1 text-2xl font-extrabold text-violet-600">{metrics.admins}</p>
         </div>
-        <div className="rounded-xl border border-(--border) bg-(--surface) p-3">
-          <p className="text-xs text-(--muted)">Verified Rate</p>
-          <p className="text-xl font-semibold">{metrics.verifiedRate}%</p>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-2xs">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Verified Rate</p>
+          <p className="mt-1 text-2xl font-extrabold text-sky-600">{metrics.verifiedRate}%</p>
         </div>
       </div>
 
@@ -160,25 +160,25 @@ export default function Users() {
         </Button>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-(--border) bg-(--surface)">
+      <div className="overflow-x-auto rounded-2xl border border-slate-200/80 bg-white shadow-2xs">
         <table className="min-w-full text-sm">
-          <thead className="bg-(--surface-2) text-left text-xs uppercase tracking-[0.14em] text-(--muted)">
+          <thead className="bg-slate-50 text-left text-xs font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200/80">
             <tr>
-              <th className="px-4 py-3">Full Name</th>
-              <th className="px-4 py-3">Username</th>
-              <th className="px-4 py-3">Email</th>
-              <th className="px-4 py-3">Role</th>
-              <th className="px-4 py-3">Status</th>
+              <th className="px-4 py-3.5">Full Name</th>
+              <th className="px-4 py-3.5">Username</th>
+              <th className="px-4 py-3.5">Email</th>
+              <th className="px-4 py-3.5">Role</th>
+              <th className="px-4 py-3.5">Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-slate-100">
             {filtered.map((user) => (
-              <tr key={user._id || user.email} className="border-t border-(--border)">
-                <td className="px-4 py-3">{user.fullName || user.username || "-"}</td>
-                <td className="px-4 py-3">{user.username || "-"}</td>
-                <td className="px-4 py-3">{user.email || "-"}</td>
-                <td className="px-4 py-3 capitalize">{user.role || "-"}</td>
-                <td className="px-4 py-3">
+              <tr key={user._id || user.email} className="transition-colors hover:bg-slate-50/80">
+                <td className="px-4 py-3.5 font-medium text-slate-900">{user.fullName || user.username || "-"}</td>
+                <td className="px-4 py-3.5 text-slate-600">{user.username || "-"}</td>
+                <td className="px-4 py-3.5 text-slate-600">{user.email || "-"}</td>
+                <td className="px-4 py-3.5 capitalize text-slate-700 font-medium">{user.role || "-"}</td>
+                <td className="px-4 py-3.5">
                   <Badge status={user.isEmailVerified ? "verified" : "pending"} />
                 </td>
               </tr>
