@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import EmptyState from "../../components/EmptyState";
-import Badge from "../../components/Badge";
 import Button from "../../components/Button";
 import { adminApi, getErrorMessage } from "../../api";
 
@@ -168,7 +167,6 @@ export default function Users() {
               <th className="px-4 py-3.5">Username</th>
               <th className="px-4 py-3.5">Email</th>
               <th className="px-4 py-3.5">Role</th>
-              <th className="px-4 py-3.5">Status</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
@@ -178,9 +176,6 @@ export default function Users() {
                 <td className="px-4 py-3.5 text-slate-600">{user.username || "-"}</td>
                 <td className="px-4 py-3.5 text-slate-600">{user.email || "-"}</td>
                 <td className="px-4 py-3.5 capitalize text-slate-700 font-medium">{user.role || "-"}</td>
-                <td className="px-4 py-3.5">
-                  <Badge status={user.isEmailVerified ? "verified" : "pending"} />
-                </td>
               </tr>
             ))}
           </tbody>
