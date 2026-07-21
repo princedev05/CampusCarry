@@ -2,7 +2,7 @@
 
 A full-stack **parcel management system** for college campuses. Students register expected parcels, guards verify arrivals at the gate using tracking ID + OTP, pickup tokens are assigned, and parcels are handed over after confirmation.
 
-🔗 **Live Demo (Frontend):** https://campus-carry-rho.vercel.app/
+🔗 **Live Demo (Frontend):** https://campus-carry-rho.vercel.app/            
 🔗 **Backend API:** https://campuscarry-backend.onrender.com/
 🔗 **Health Check:** https://campuscarry-backend.onrender.com/api/v1/healthcheck
 
